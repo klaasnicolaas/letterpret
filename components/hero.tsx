@@ -3,7 +3,7 @@
 import { Button, Chip, Image } from "@nextui-org/react";
 import { motion } from "framer-motion";
 
-import product from "@/public/images/background.webp";
+import product from "@/public/images/background_1.webp";
 
 export default function Hero() {
   return (

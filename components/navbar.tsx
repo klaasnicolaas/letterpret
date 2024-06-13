@@ -12,11 +12,12 @@ import {
   NavbarMenuToggle,
 } from "@nextui-org/react";
 import ThemeSwitcher from "./ThemeSwitcher";
-import { usePathname  } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import clsx from "clsx";
 import Logo from "./logo";
 
 export default function NavBar() {
+  const router = useRouter();
   const pathname = usePathname();
   const navLinks = [
     { label: "Home", href: "/" },
@@ -52,7 +53,7 @@ export default function NavBar() {
             <Button
               as={Link}
               variant="light"
-              href={link.href}
+              onClick={() => router.push(link.href)}
               className={clsx({
                 "font-bold": pathname === link.href,
               })}
