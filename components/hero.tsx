@@ -38,7 +38,7 @@ export default function Hero() {
                 </svg>
               }
               variant="flat"
-              color="primary"
+              color="warning"
               size="lg"
               className="mb-6 hidden md:flex"
             >
