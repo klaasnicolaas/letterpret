@@ -53,7 +53,7 @@ export default function NavBar() {
             <Button
               as={Link}
               variant="light"
-              onClick={() => router.push(link.href)}
+              onPress={() => router.push(link.href)}
               className={clsx({
                 "font-bold": pathname === link.href,
               })}
