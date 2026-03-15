@@ -1,97 +1,164 @@
 "use client";
 
-import { Button, Chip, Image } from "@nextui-org/react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Sparkles } from "lucide-react";
 
-import product from "@/public/images/background_1.webp";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import productImage from "@/public/images/background_1.webp";
+import letterA from "@/public/images/letter-a.svg";
+import letterB from "@/public/images/letter-b.svg";
+import letterC from "@/public/images/letter-c.svg";
+
+const stats = [
+  { value: "4", label: "Gekleurde blokken" },
+  { value: "3D", label: "Geprint in Nederland" },
+  { value: "✦", label: "Handgemaakt met zorg" },
+];
 
 export default function Hero() {
   return (
-    <div className="relative justify-center items-center">
-      <section>
-        <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-          <div className="mt-4 md:mt-0">
-            <Chip
-              startContent={
-                <svg
-                  className="mx-1"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  stroke="currentColor"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M4 5h2" />
-                  <path d="M5 4v2" />
-                  <path d="M11.5 4l-.5 2" />
-                  <path d="M18 5h2" />
-                  <path d="M19 4v2" />
-                  <path d="M15 9l-1 1" />
-                  <path d="M18 13l2 -.5" />
-                  <path d="M18 19h2" />
-                  <path d="M19 18v2" />
-                  <path d="M14 16.518l-6.518 -6.518l-4.39 9.58a1 1 0 0 0 1.329 1.329l9.579 -4.39z" />
-                </svg>
-              }
-              variant="flat"
-              color="warning"
-              size="lg"
-              className="mb-6 hidden md:flex"
+    <section className="relative overflow-hidden bg-background">
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute -top-40 right-0 h-[640px] w-[640px] translate-x-1/3 rounded-full bg-primary-100/60 blur-3xl dark:bg-primary-900/20" />
+        <div className="absolute -bottom-32 left-0 h-[480px] w-[480px] -translate-x-1/3 rounded-full bg-primary-50 blur-3xl dark:bg-primary-900/10" />
+      </div>
+
+      <div className="mx-auto max-w-screen-xl px-4 py-12 sm:py-16 lg:px-8 lg:py-24">
+        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
+          {/* Tekst */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="flex flex-col items-center text-center md:items-start md:text-left"
+          >
+            <Badge
+              variant="secondary"
+              className="mb-6 gap-1.5 rounded-full border border-primary-200 bg-primary-50 px-3 py-1 text-xs font-semibold text-primary-700 dark:border-primary-800 dark:bg-primary-900/30 dark:text-primary-300"
             >
-              NEW - De box vol letterpret!
-            </Chip>
-            <h2 className="mb-4 text-4xl text-center md:text-left tracking-tight font-extrabold md:text-6xl from-foreground to-foreground/70">
-              Spelenderwijs nieuwe letters leren
-            </h2>
-            <p className="mb-6 font-light md:text-lg">
-              Flowbite helps you connect with friends and communities of people
-              who share your interests. Connecting with your friends and family
-              as well as discovering new ones is easy with features like Groups.
+              <Sparkles size={12} />
+              Nieuw — De box vol letterpret!
+            </Badge>
+
+            <h1 className="mb-5 text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+              Spelenderwijs{" "}
+              <span className="bg-gradient-to-r from-primary-500 to-primary-400 bg-clip-text text-transparent">
+                letters en woorden
+              </span>{" "}
+              leren lezen
+            </h1>
+
+            <p className="mb-8 max-w-md text-lg leading-relaxed text-muted-foreground">
+              Tastbare, magnetische letterboxen die kinderen helpen lezen op hun eigen tempo.
+              Geschikt voor thuis en in de klas.
             </p>
-            <Button
-              size="md"
-              color="primary"
-              className="mb-6 w-full md:w-auto"
-              variant="shadow"
-            >
-              Meer info
-              <svg
-                className="ml-2 -mr-1 w-5 h-5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
+
+            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+              <Button
+                size="lg"
+                className="rounded-full bg-gradient-to-br from-primary-400 to-primary-600 px-8 font-semibold text-white shadow-md shadow-primary-500/30 transition-all hover:from-primary-500 hover:to-primary-700 hover:shadow-lg hover:shadow-primary-500/35"
+                asChild
               >
-                <path
-                  fillRule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            </Button>
-          </div>
-          <Image
-            isBlurred
-            height={400}
-            className="w-full"
-            src={product.src}
-            alt="product image"
-          />
+                <Link href="/contact">
+                  Bestel nu <ArrowRight size={16} />
+                </Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full border-primary-200 px-8 font-semibold text-primary-600 hover:border-primary-300 hover:bg-primary-50 dark:border-primary-800 dark:text-primary-400 dark:hover:bg-primary-950/40"
+                asChild
+              >
+                <Link href="/lesmateriaal">Meer info</Link>
+              </Button>
+            </div>
+
+            {/* Statistieken */}
+            <div className="mt-8 flex items-center justify-center gap-6 md:justify-start">
+              {stats.map((s, i) => (
+                <div key={s.label} className="flex items-center gap-6">
+                  <div className="flex flex-col items-center md:items-start">
+                    <span className="text-xl font-extrabold text-foreground sm:text-2xl">
+                      {s.value}
+                    </span>
+                    <span className="text-xs text-muted-foreground">{s.label}</span>
+                  </div>
+                  {i < stats.length - 1 && <div className="h-8 w-px bg-border" />}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Afbeelding */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96, y: 12 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+            className="relative"
+          >
+            {/* Floating letter tiles */}
+            <motion.div
+              initial={{ opacity: 0, rotate: 12, scale: 0.8 }}
+              animate={{ opacity: 1, rotate: 12, scale: 1, y: [0, -6, 0] }}
+              transition={{
+                opacity: { delay: 0.7, duration: 0.4 },
+                scale: { delay: 0.7, duration: 0.4 },
+                y: { delay: 1.2, duration: 3, repeat: Infinity, ease: "easeInOut" },
+              }}
+              className="absolute -top-6 right-8 z-10 drop-shadow-xl"
+            >
+              <Image src={letterA} alt="Letter A" width={64} height={64} />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, rotate: -8, scale: 0.8 }}
+              animate={{ opacity: 1, rotate: -8, scale: 1, y: [0, 6, 0] }}
+              transition={{
+                opacity: { delay: 0.85, duration: 0.4 },
+                scale: { delay: 0.85, duration: 0.4 },
+                y: { delay: 1.4, duration: 3.4, repeat: Infinity, ease: "easeInOut" },
+              }}
+              className="absolute -bottom-6 right-16 z-10 drop-shadow-xl"
+            >
+              <Image src={letterB} alt="Letter B" width={60} height={60} />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, rotate: 16, scale: 0.8 }}
+              animate={{ opacity: 1, rotate: 16, scale: 1, y: [0, -5, 0] }}
+              transition={{
+                opacity: { delay: 1.0, duration: 0.4 },
+                scale: { delay: 1.0, duration: 0.4 },
+                y: { delay: 1.6, duration: 2.8, repeat: Infinity, ease: "easeInOut" },
+              }}
+              className="absolute top-8 -left-6 z-10 drop-shadow-xl"
+            >
+              <Image src={letterC} alt="Letter C" width={56} height={56} />
+            </motion.div>
+            <div className="absolute inset-4 rounded-3xl bg-primary-200/50 blur-2xl dark:bg-primary-700/20" />
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-primary-500/10 ring-1 ring-primary-100 dark:ring-primary-900/50">
+              <Image
+                src={productImage}
+                alt="Letterpret letterboxen"
+                className="h-auto w-full object-cover"
+                priority
+              />
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.65, duration: 0.4 }}
+                className="absolute bottom-4 left-4 rounded-xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm dark:bg-card/95"
+              >
+                <p className="text-xs font-medium text-muted-foreground">Aansluitend op</p>
+                <p className="text-sm font-bold text-primary-600 dark:text-primary-400">
+                  Bouw! methode
+                </p>
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
-      </section>
-      <motion.div
-        initial={{ y: 5, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.7, delay: 0.5 }}
-        className="w-full h-full absolute -top-32 flex justify-end items-center -z-10"
-      >
-        <div className="w-3/4 flex justify-center items-center">
-          <div className="w-12 h-[600px] bg-light blur-[100px] rounded-3xl max-sm:rotate-[15deg] sm:rotate-[35deg]"></div>
-        </div>
-      </motion.div>
-    </div>
+      </div>
+    </section>
   );
 }
