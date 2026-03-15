@@ -11,7 +11,7 @@ const steps = [
     icon: Package,
     title: "Kies je doos",
     description:
-      "Selecteer de letterboxen die aansluiten op het niveau van jouw kind. De sets zijn opgebouwd in de volgorde van de Bouw! leesmethode.",
+      "Selecteer de letterboxen die aansluiten op het niveau van jouw kind. De sets zijn opgebouwd in de volgorde van het Bouw! programma.",
   },
   {
     number: "02",

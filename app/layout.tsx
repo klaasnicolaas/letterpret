@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Letterpret — Spelenderwijs letters leren",
   description:
-    "Tastbare, magnetische letterboxen die kinderen helpen lezen op hun eigen tempo. Geschikt voor thuis en in de klas. Werkt met de Bouw! methode.",
+    "Tastbare, magnetische letterboxen die kinderen helpen lezen op hun eigen tempo. Geschikt voor thuis en in de klas. Werkt met het Bouw! programma.",
   keywords: ["letterpret", "letters leren", "lezen", "bouw methode", "letterboxen", "onderwijs"],
 };
 

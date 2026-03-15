@@ -108,9 +108,15 @@ export default function Hero() {
                 scale: { delay: 0.7, duration: 0.4 },
                 y: { delay: 1.2, duration: 3, repeat: Infinity, ease: "easeInOut" },
               }}
-              className="absolute -top-6 right-8 z-10 drop-shadow-xl"
+              className="absolute right-3 top-3 z-10 drop-shadow-xl md:-top-6 md:right-8"
             >
-              <Image src={letterA} alt="Letter A" width={64} height={64} />
+              <Image
+                src={letterA}
+                alt="Letter A"
+                width={64}
+                height={64}
+                className="h-14 w-14 md:h-16 md:w-16"
+              />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, rotate: -8, scale: 0.8 }}
@@ -120,9 +126,15 @@ export default function Hero() {
                 scale: { delay: 0.85, duration: 0.4 },
                 y: { delay: 1.4, duration: 3.4, repeat: Infinity, ease: "easeInOut" },
               }}
-              className="absolute -bottom-6 right-16 z-10 drop-shadow-xl"
+              className="absolute bottom-3 right-14 z-10 drop-shadow-xl md:-bottom-6 md:right-16"
             >
-              <Image src={letterB} alt="Letter B" width={60} height={60} />
+              <Image
+                src={letterB}
+                alt="Letter B"
+                width={60}
+                height={60}
+                className="h-13 w-13 md:h-15 md:w-15"
+              />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, rotate: 16, scale: 0.8 }}
@@ -132,9 +144,15 @@ export default function Hero() {
                 scale: { delay: 1.0, duration: 0.4 },
                 y: { delay: 1.6, duration: 2.8, repeat: Infinity, ease: "easeInOut" },
               }}
-              className="absolute top-8 -left-6 z-10 drop-shadow-xl"
+              className="absolute left-3 top-3 z-10 drop-shadow-xl md:-left-6 md:top-8"
             >
-              <Image src={letterC} alt="Letter C" width={56} height={56} />
+              <Image
+                src={letterC}
+                alt="Letter C"
+                width={56}
+                height={56}
+                className="h-12 w-12 md:h-14 md:w-14"
+              />
             </motion.div>
             <div className="absolute inset-4 rounded-3xl bg-primary-200/50 blur-2xl dark:bg-primary-700/20" />
             <div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-primary-500/10 ring-1 ring-primary-100 dark:ring-primary-900/50">
@@ -152,7 +170,7 @@ export default function Hero() {
               >
                 <p className="text-xs font-medium text-muted-foreground">Aansluitend op</p>
                 <p className="text-sm font-bold text-primary-600 dark:text-primary-400">
-                  Bouw! methode
+                  Bouw! programma
                 </p>
               </motion.div>
             </div>

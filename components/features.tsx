@@ -30,7 +30,7 @@ const features = [
     accentBar: "bg-orange-500",
     title: "Passend bij Bouw!",
     description:
-      "De letters zijn opgedeeld in blokken die aansluiten op de volgorde van de Bouw! leesmethode.",
+      "De letters zijn opgedeeld in blokken die aansluiten op de volgorde van het Bouw! programma.",
   },
 ];
 

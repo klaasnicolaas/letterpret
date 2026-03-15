@@ -51,7 +51,7 @@ export default function ContactForm() {
     <>
       {/* Header */}
       <section className="relative overflow-hidden border-b border-border bg-section-warm py-14 sm:py-20">
-        <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
           <div className="absolute right-0 top-0 h-64 w-64 translate-x-1/3 -translate-y-1/3 rounded-full bg-primary-100/60 blur-3xl" />
         </div>
         <motion.div
