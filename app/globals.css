@@ -1,7 +1,89 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
 
+/* Dark mode via class strategy — mirrors darkMode: ["class"] from v3 config */
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * @theme inline: CSS variable references are passed through as-is.
+ * This lets runtime CSS vars (set in :root / .dark) drive all design tokens,
+ * exactly as Shadcn UI expects.
+ */
+@theme inline {
+  /* ── Semantic color tokens (Shadcn UI) ── */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  /* ── Warm section background ── */
+  --color-section-warm: rgb(var(--section-warm));
+
+  /* ── Primary numbered scale (orange — mirrors Tailwind's orange palette) ── */
+  --color-primary-50: #fff7ed;
+  --color-primary-100: #ffedd5;
+  --color-primary-200: #fed7aa;
+  --color-primary-300: #fdba74;
+  --color-primary-400: #fb923c;
+  --color-primary-500: #f97316;
+  --color-primary-600: #ea6c0a;
+  --color-primary-700: #c2570a;
+  --color-primary-800: #9a3412;
+  --color-primary-900: #7c2d12;
+  --color-primary-950: #431407;
+
+  /* ── Border radius ── */
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  /* ── Keyframes ── */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+/* ── Runtime CSS custom properties ── */
 @layer base {
   :root {
     --background: 0 0% 100%;
