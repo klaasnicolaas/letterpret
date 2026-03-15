@@ -151,6 +151,10 @@ html {
   overflow-x: clip;
 }
 
+body[data-scroll-locked] {
+  --removed-body-scroll-bar-size: 0px !important;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
