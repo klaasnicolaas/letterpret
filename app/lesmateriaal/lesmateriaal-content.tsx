@@ -148,9 +148,9 @@ const productSets: { sets: ProductSet[]; completeSet: ProductSet[] } = {
 
 const faqItems = [
   {
-    question: "Wat is de Bouw! methode?",
+    question: "Wat is het Bouw! programma?",
     answer:
-      "Bouw! is een wetenschappelijk onderbouwde leesmethode van Lexipoort, speciaal ontwikkeld voor kinderen die extra ondersteuning nodig hebben bij het leren lezen. De methode werkt systematisch via blokken waarbij steeds nieuwe klanken en letters worden geïntroduceerd.",
+      "Bouw! is een lesprogramma van Lexima, speciaal ontwikkeld voor kinderen die extra ondersteuning nodig hebben bij het leren lezen. Het programma werkt systematisch via blokken waarbij steeds nieuwe klanken en letters worden geïntroduceerd.",
   },
   {
     question: "Vanaf welke leeftijd zijn de letterboxen geschikt?",
@@ -170,7 +170,7 @@ const faqItems = [
   {
     question: "Werkt Letterpret ook voor dyslectische kinderen?",
     answer:
-      "De tactiele, magnetische aanpak van Letterpret is juist erg geschikt voor kinderen met dyslexie. Door letters letterlijk te kunnen aanraken en bewegen, worden meerdere zintuigen tegelijk aangesproken. De Bouw! methode is ontworpen met extra aandacht voor kinderen die moeite hebben met lezen.",
+      "De tactiele, magnetische aanpak van Letterpret is juist erg geschikt voor kinderen met dyslexie. Door letters letterlijk te kunnen aanraken en bewegen, worden meerdere zintuigen tegelijk aangesproken. Het Bouw! programma is ontworpen met extra aandacht voor kinderen die moeite hebben met lezen.",
   },
 ];
 
@@ -266,7 +266,7 @@ export default function LesmateriaalContent() {
     <>
       {/* ── Header ── */}
       <section className="relative overflow-hidden border-b border-border bg-section-warm py-14 sm:py-20">
-        <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
           <div className="absolute right-0 top-0 h-72 w-72 translate-x-1/3 -translate-y-1/3 rounded-full bg-primary-100/60 blur-3xl" />
           <div className="absolute bottom-0 left-0 h-48 w-48 -translate-x-1/3 translate-y-1/3 rounded-full bg-amber-100/50 blur-3xl" />
         </div>
@@ -281,7 +281,7 @@ export default function LesmateriaalContent() {
             className="mb-6 gap-1.5 rounded-full border border-primary-200 bg-primary-50 px-3 py-1 text-xs font-semibold text-primary-700 dark:border-primary-800 dark:bg-primary-900/30 dark:text-primary-300"
           >
             <BookOpen size={12} />
-            Gebaseerd op de Bouw! methode
+            Gebaseerd op de Bouw! programma
           </Badge>
           <h1 className="mb-4 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             Magnetische{" "}
@@ -291,7 +291,7 @@ export default function LesmateriaalContent() {
             per blok
           </h1>
           <p className="mx-auto mb-8 max-w-xl text-base text-muted-foreground sm:text-lg">
-            Elk pakket sluit precies aan op een of meerdere blokken van de Bouw! methode. Kies het
+            Elk pakket sluit precies aan op een of meerdere blokken van de Bouw! programma. Kies het
             niveau dat past bij jouw kind.
           </p>
 
