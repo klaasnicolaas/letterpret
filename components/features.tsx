@@ -48,7 +48,6 @@ export default function Features() {
   return (
     <section className="bg-section-warm py-14 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-screen-xl px-4 lg:px-8">
-
         {/* Sectieheader */}
         <motion.div
           initial={{ opacity: 0, y: 18 }}
@@ -83,7 +82,9 @@ export default function Features() {
                 <Card className="group h-full overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:shadow-primary-500/10">
                   <div className={`h-1 w-full ${f.accentBar}`} />
                   <CardContent className="flex flex-col p-7">
-                    <div className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl ${f.iconBg}`}>
+                    <div
+                      className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl ${f.iconBg}`}
+                    >
                       <Icon size={22} className={f.iconColor} />
                     </div>
                     <h3 className="mb-3 text-xl font-bold text-foreground">{f.title}</h3>
@@ -94,7 +95,6 @@ export default function Features() {
             );
           })}
         </motion.div>
-
       </div>
     </section>
   );

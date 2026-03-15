@@ -7,28 +7,22 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import ThemeSwitcher from "./ThemeSwitcher";
 import Logo from "./logo";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: "Home",         href: "/" },
+  { label: "Home", href: "/" },
   { label: "Lesmateriaal", href: "/lesmateriaal" },
-  { label: "Blog",         href: "/blog" },
-  { label: "Contact",      href: "/contact" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function NavBar() {
   const pathname = usePathname();
-  const router   = useRouter();
-  const [scrolled,  setScrolled]  = useState(false);
+  const router = useRouter();
+  const [scrolled, setScrolled] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
 
   useEffect(() => {
@@ -37,7 +31,9 @@ export default function NavBar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => { setSheetOpen(false); }, [pathname]);
+  useEffect(() => {
+    setSheetOpen(false);
+  }, [pathname]);
 
   return (
     <>
@@ -50,7 +46,6 @@ export default function NavBar() {
         )}
       >
         <nav className="mx-auto flex h-16 max-w-screen-xl items-center px-4 lg:px-8">
-
           {/* ── LOGO — links op beide formaten ── */}
           <Link href="/" className="shrink-0">
             <Logo width={150} height={90} />
@@ -136,9 +131,7 @@ export default function NavBar() {
                         )}
                       >
                         {link.label}
-                        {isActive && (
-                          <span className="h-1.5 w-1.5 rounded-full bg-primary-500" />
-                        )}
+                        {isActive && <span className="h-1.5 w-1.5 rounded-full bg-primary-500" />}
                       </Link>
                     );
                   })}
@@ -147,7 +140,10 @@ export default function NavBar() {
                 <div className="absolute bottom-0 left-0 right-0 border-t border-border p-4">
                   <Button
                     className="w-full rounded-full bg-gradient-to-br from-primary-400 to-primary-600 font-semibold text-white shadow-sm hover:from-primary-500 hover:to-primary-700"
-                    onClick={() => { router.push("/contact"); setSheetOpen(false); }}
+                    onClick={() => {
+                      router.push("/contact");
+                      setSheetOpen(false);
+                    }}
                   >
                     Aan de slag
                   </Button>
@@ -155,7 +151,6 @@ export default function NavBar() {
               </SheetContent>
             </Sheet>
           </div>
-
         </nav>
       </header>
 

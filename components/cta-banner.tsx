@@ -20,7 +20,10 @@ export default function CtaBanner() {
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <div className="absolute -right-32 -top-32 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
             <div className="absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-primary-800/50 blur-3xl" />
-            <svg className="absolute inset-0 h-full w-full opacity-[0.035]" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              className="absolute inset-0 h-full w-full opacity-[0.035]"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <defs>
                 <pattern id="cta-grid" width="32" height="32" patternUnits="userSpaceOnUse">
                   <path d="M 32 0 L 0 0 0 32" fill="none" stroke="white" strokeWidth="1" />

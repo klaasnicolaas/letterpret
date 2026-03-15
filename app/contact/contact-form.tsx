@@ -15,21 +15,21 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 const contactInfo = [
-  { icon: Mail,   label: "info@letterpret.nu",  href: "mailto:info@letterpret.nu" },
-  { icon: Phone,  label: "+31 (0)6 00 00 00 00", href: "tel:+31600000000" },
-  { icon: MapPin, label: "Nederland",             href: undefined },
+  { icon: Mail, label: "info@letterpret.nu", href: "mailto:info@letterpret.nu" },
+  { icon: Phone, label: "+31 (0)6 00 00 00 00", href: "tel:+31600000000" },
+  { icon: MapPin, label: "Nederland", href: undefined },
 ];
 
 const inquiryTypes = [
-  { value: "vraag",        label: "Vraag" },
-  { value: "bestelling",   label: "Bestelling" },
+  { value: "vraag", label: "Vraag" },
+  { value: "bestelling", label: "Bestelling" },
   { value: "samenwerking", label: "Samenwerking" },
-  { value: "anders",       label: "Anders" },
+  { value: "anders", label: "Anders" },
 ];
 
 export default function ContactForm() {
-  const [type,        setType]        = useState("vraag");
-  const [submitting,  setSubmitting]  = useState(false);
+  const [type, setType] = useState("vraag");
+  const [submitting, setSubmitting] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -91,7 +91,7 @@ export default function ContactForm() {
                   <Icon size={12} />
                   {label}
                 </Badge>
-              )
+              ),
             )}
           </div>
         </motion.div>
@@ -108,7 +108,6 @@ export default function ContactForm() {
             <Card className="border-border shadow-sm">
               <CardContent className="p-6 sm:p-8">
                 <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-
                   {/* Soort bericht */}
                   <div className="flex flex-col gap-2">
                     <Label className="text-sm font-medium">Soort bericht</Label>
@@ -140,8 +139,18 @@ export default function ContactForm() {
                         Naam <span className="text-destructive">*</span>
                       </Label>
                       <div className="relative">
-                        <User size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                        <Input id="naam" name="naam" type="text" placeholder="Jan de Vries" className="pl-9" required />
+                        <User
+                          size={15}
+                          className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
+                        />
+                        <Input
+                          id="naam"
+                          name="naam"
+                          type="text"
+                          placeholder="Jan de Vries"
+                          className="pl-9"
+                          required
+                        />
                       </div>
                     </div>
                     <div className="flex flex-col gap-1.5">
@@ -149,8 +158,18 @@ export default function ContactForm() {
                         E-mailadres <span className="text-destructive">*</span>
                       </Label>
                       <div className="relative">
-                        <Mail size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                        <Input id="email" name="email" type="email" placeholder="jan@voorbeeld.nl" className="pl-9" required />
+                        <Mail
+                          size={15}
+                          className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
+                        />
+                        <Input
+                          id="email"
+                          name="email"
+                          type="email"
+                          placeholder="jan@voorbeeld.nl"
+                          className="pl-9"
+                          required
+                        />
                       </div>
                     </div>
                   </div>
@@ -159,8 +178,17 @@ export default function ContactForm() {
                   <div className="flex flex-col gap-1.5">
                     <Label htmlFor="telefoon">Telefoonnummer</Label>
                     <div className="relative">
-                      <Phone size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                      <Input id="telefoon" name="telefoon" type="tel" placeholder="+31 (0)6 00 00 00 00" className="pl-9" />
+                      <Phone
+                        size={15}
+                        className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
+                      />
+                      <Input
+                        id="telefoon"
+                        name="telefoon"
+                        type="tel"
+                        placeholder="+31 (0)6 00 00 00 00"
+                        className="pl-9"
+                      />
                     </div>
                     <p className="text-xs text-muted-foreground">
                       Optioneel, handig als je liever teruggebeld wordt.
@@ -187,7 +215,10 @@ export default function ContactForm() {
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div className="flex items-center gap-2">
                       <Checkbox id="nieuwsbrief" name="nieuwsbrief" />
-                      <Label htmlFor="nieuwsbrief" className="cursor-pointer text-sm font-normal text-muted-foreground">
+                      <Label
+                        htmlFor="nieuwsbrief"
+                        className="cursor-pointer text-sm font-normal text-muted-foreground"
+                      >
                         Houd mij op de hoogte van nieuws en aanbiedingen.
                       </Label>
                     </div>
@@ -198,12 +229,15 @@ export default function ContactForm() {
                       disabled={submitting}
                       className="w-full rounded-full bg-gradient-to-br from-primary-400 to-primary-600 font-semibold text-white shadow-md shadow-primary-500/25 transition-all hover:from-primary-500 hover:to-primary-700 disabled:opacity-70 sm:w-auto"
                     >
-                      {submitting ? "Verzenden..." : (
-                        <><Send size={15} /> Verstuur bericht</>
+                      {submitting ? (
+                        "Verzenden..."
+                      ) : (
+                        <>
+                          <Send size={15} /> Verstuur bericht
+                        </>
                       )}
                     </Button>
                   </div>
-
                 </form>
               </CardContent>
             </Card>

@@ -34,7 +34,6 @@ export default function HowItWorks() {
     <section className="bg-background py-14 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-screen-xl px-4 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
-
           {/* Afbeelding */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -104,14 +103,15 @@ export default function HowItWorks() {
                         </span>
                         <h3 className="text-lg font-bold text-foreground">{step.title}</h3>
                       </div>
-                      <p className="text-sm leading-relaxed text-muted-foreground">{step.description}</p>
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        {step.description}
+                      </p>
                     </div>
                   </motion.div>
                 );
               })}
             </div>
           </div>
-
         </div>
       </div>
     </section>

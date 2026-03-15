@@ -13,8 +13,7 @@ export const metadata: Metadata = {
   keywords: ["letterpret", "letters leren", "lezen", "bouw methode", "letterboxen", "onderwijs"],
   openGraph: {
     title: "Letterpret — Spelenderwijs letters leren",
-    description:
-      "Tastbare, magnetische letterboxen die kinderen helpen lezen op hun eigen tempo.",
+    description: "Tastbare, magnetische letterboxen die kinderen helpen lezen op hun eigen tempo.",
     type: "website",
     locale: "nl_NL",
   },

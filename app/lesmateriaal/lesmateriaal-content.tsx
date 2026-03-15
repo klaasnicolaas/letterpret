@@ -53,7 +53,8 @@ const productSets: { sets: ProductSet[]; completeSet: ProductSet[] } = {
       name: "Startdoos",
       level: "Blok 1 & 2",
       levelColor: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400",
-      description: "De perfecte eerste stap. Klinkers en de meest gebruikte medeklinkers waarmee kinderen direct hun eerste woordjes bouwen.",
+      description:
+        "De perfecte eerste stap. Klinkers en de meest gebruikte medeklinkers waarmee kinderen direct hun eerste woordjes bouwen.",
       blockGroups: [
         {
           name: "Blok 1 — Groen",
@@ -77,7 +78,8 @@ const productSets: { sets: ProductSet[]; completeSet: ProductSet[] } = {
       name: "Groeidos",
       level: "Blok 3 & 4",
       levelColor: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400",
-      description: "Bouw verder. Lange klinkers, tweeklanken en meer medeklinkers voor een groter woordenschat.",
+      description:
+        "Bouw verder. Lange klinkers, tweeklanken en meer medeklinkers voor een groter woordenschat.",
       blockGroups: [
         {
           name: "Blok 3 — Blauw",
@@ -103,7 +105,8 @@ const productSets: { sets: ProductSet[]; completeSet: ProductSet[] } = {
       name: "Complete set — Blok 1 t/m 4",
       level: "Compleet",
       levelColor: "bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400",
-      description: "Alle vier de blokken bij elkaar. Ideaal om direct met de volledige set aan de slag te gaan.",
+      description:
+        "Alle vier de blokken bij elkaar. Ideaal om direct met de volledige set aan de slag te gaan.",
       blockGroups: [
         {
           name: "Blok 1 — Groen",
@@ -134,7 +137,11 @@ const productSets: { sets: ProductSet[]; completeSet: ProductSet[] } = {
           double: [],
         },
       ],
-      included: ["Magnetische letters Blok 1 t/m 4", "Instructiekaarten voor alle blokken", "Woordenlijst"],
+      included: [
+        "Magnetische letters Blok 1 t/m 4",
+        "Instructiekaarten voor alle blokken",
+        "Woordenlijst",
+      ],
     },
   ],
 };
@@ -176,7 +183,9 @@ function ProductCard({ product }: { product: ProductSet }) {
     <Card className="relative flex h-full flex-col">
       <CardHeader className="pb-3 pt-6">
         <div className="mb-2">
-          <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${product.levelColor}`}>
+          <span
+            className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${product.levelColor}`}
+          >
             {product.level}
           </span>
         </div>
@@ -197,14 +206,22 @@ function ProductCard({ product }: { product: ProductSet }) {
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {group.single.map((l) => (
-                  <span key={l} className={`inline-flex h-7 min-w-[1.75rem] items-center justify-center rounded-md border px-1.5 text-sm font-bold ${group.chip}`}>
+                  <span
+                    key={l}
+                    className={`inline-flex h-7 min-w-[1.75rem] items-center justify-center rounded-md border px-1.5 text-sm font-bold ${group.chip}`}
+                  >
                     {l}
                   </span>
                 ))}
                 {group.double.map((l) => (
-                  <span key={`${l}-double`} className={`relative inline-flex h-7 min-w-[1.75rem] items-center justify-center rounded-md border px-1.5 text-sm font-bold ${group.chip}`}>
+                  <span
+                    key={`${l}-double`}
+                    className={`relative inline-flex h-7 min-w-[1.75rem] items-center justify-center rounded-md border px-1.5 text-sm font-bold ${group.chip}`}
+                  >
                     {l}
-                    <span className="absolute -right-1.5 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-foreground text-[9px] font-black text-background leading-none">2</span>
+                    <span className="absolute -right-1.5 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-foreground text-[9px] font-black text-background leading-none">
+                      2
+                    </span>
                   </span>
                 ))}
               </div>
@@ -247,7 +264,6 @@ function ProductCard({ product }: { product: ProductSet }) {
 export default function LesmateriaalContent() {
   return (
     <>
-
       {/* ── Header ── */}
       <section className="relative overflow-hidden border-b border-border bg-section-warm py-14 sm:py-20">
         <div className="pointer-events-none absolute inset-0 -z-10">
@@ -275,16 +291,17 @@ export default function LesmateriaalContent() {
             per blok
           </h1>
           <p className="mx-auto mb-8 max-w-xl text-base text-muted-foreground sm:text-lg">
-            Elk pakket sluit precies aan op een of meerdere blokken van de Bouw! methode. Kies het niveau dat past bij jouw kind.
+            Elk pakket sluit precies aan op een of meerdere blokken van de Bouw! methode. Kies het
+            niveau dat past bij jouw kind.
           </p>
 
           {/* Kernvoordelen */}
           <div className="flex flex-wrap items-center justify-center gap-3">
             {[
-              { icon: Magnet,  label: "Magnetisch" },
-              { icon: Layers,  label: "Per Bouw! blok" },
+              { icon: Magnet, label: "Magnetisch" },
+              { icon: Layers, label: "Per Bouw! blok" },
               { icon: Package, label: "Compleet pakket" },
-              { icon: Box,     label: "Duurzaam materiaal" },
+              { icon: Box, label: "Duurzaam materiaal" },
             ].map(({ icon: Icon, label }) => (
               <Badge
                 key={label}
@@ -313,10 +330,16 @@ export default function LesmateriaalContent() {
                   <TabsTrigger value="sets" className="rounded-full px-5 py-2 text-sm font-medium">
                     Per set
                   </TabsTrigger>
-                  <TabsTrigger value="completeSet" className="rounded-full px-5 py-2 text-sm font-medium">
+                  <TabsTrigger
+                    value="completeSet"
+                    className="rounded-full px-5 py-2 text-sm font-medium"
+                  >
                     Complete set
                   </TabsTrigger>
-                  <TabsTrigger value="comingSoon" className="rounded-full px-5 py-2 text-sm font-medium">
+                  <TabsTrigger
+                    value="comingSoon"
+                    className="rounded-full px-5 py-2 text-sm font-medium"
+                  >
                     Meer blokken
                   </TabsTrigger>
                 </TabsList>
@@ -341,9 +364,12 @@ export default function LesmateriaalContent() {
               <TabsContent value="comingSoon">
                 <div className="mx-auto max-w-lg rounded-2xl border border-dashed border-muted-foreground/30 bg-muted/30 px-8 py-14 text-center">
                   <Clock size={36} className="mx-auto mb-4 text-muted-foreground/50" />
-                  <h3 className="mb-2 text-lg font-bold text-foreground">Meer blokken komen eraan</h3>
+                  <h3 className="mb-2 text-lg font-bold text-foreground">
+                    Meer blokken komen eraan
+                  </h3>
                   <p className="text-sm text-muted-foreground">
-                    We werken aan uitbreidingsblokken voor kinderen die verder willen. Houd deze pagina in de gaten of neem contact op als je alvast op de hoogte wilt blijven.
+                    We werken aan uitbreidingsblokken voor kinderen die verder willen. Houd deze
+                    pagina in de gaten of neem contact op als je alvast op de hoogte wilt blijven.
                   </p>
                 </div>
               </TabsContent>
@@ -414,7 +440,8 @@ export default function LesmateriaalContent() {
                 Heb je een vraag of wil je bestellen?
               </h2>
               <p className="mx-auto mb-8 max-w-lg text-base text-primary-100 sm:text-lg">
-                Neem contact op en we helpen je graag bij het kiezen van het juiste pakket voor jouw kind.
+                Neem contact op en we helpen je graag bij het kiezen van het juiste pakket voor jouw
+                kind.
               </p>
               <Button
                 size="lg"
@@ -429,7 +456,6 @@ export default function LesmateriaalContent() {
           </motion.div>
         </div>
       </section>
-
     </>
   );
 }

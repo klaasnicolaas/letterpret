@@ -28,7 +28,6 @@ export default function Hero() {
 
       <div className="mx-auto max-w-screen-xl px-4 py-12 sm:py-16 lg:px-8 lg:py-24">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
-
           {/* Tekst */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -53,7 +52,8 @@ export default function Hero() {
             </h1>
 
             <p className="mb-8 max-w-md text-lg leading-relaxed text-muted-foreground">
-              Tastbare, magnetische letterboxen die kinderen helpen lezen op hun eigen tempo. Geschikt voor thuis en in de klas.
+              Tastbare, magnetische letterboxen die kinderen helpen lezen op hun eigen tempo.
+              Geschikt voor thuis en in de klas.
             </p>
 
             <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
@@ -81,12 +81,12 @@ export default function Hero() {
               {stats.map((s, i) => (
                 <div key={s.label} className="flex items-center gap-6">
                   <div className="flex flex-col items-center md:items-start">
-                    <span className="text-xl font-extrabold text-foreground sm:text-2xl">{s.value}</span>
+                    <span className="text-xl font-extrabold text-foreground sm:text-2xl">
+                      {s.value}
+                    </span>
                     <span className="text-xs text-muted-foreground">{s.label}</span>
                   </div>
-                  {i < stats.length - 1 && (
-                    <div className="h-8 w-px bg-border" />
-                  )}
+                  {i < stats.length - 1 && <div className="h-8 w-px bg-border" />}
                 </div>
               ))}
             </div>
@@ -103,7 +103,11 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, rotate: 12, scale: 0.8 }}
               animate={{ opacity: 1, rotate: 12, scale: 1, y: [0, -6, 0] }}
-              transition={{ opacity: { delay: 0.7, duration: 0.4 }, scale: { delay: 0.7, duration: 0.4 }, y: { delay: 1.2, duration: 3, repeat: Infinity, ease: "easeInOut" } }}
+              transition={{
+                opacity: { delay: 0.7, duration: 0.4 },
+                scale: { delay: 0.7, duration: 0.4 },
+                y: { delay: 1.2, duration: 3, repeat: Infinity, ease: "easeInOut" },
+              }}
               className="absolute -top-6 right-8 z-10 drop-shadow-xl"
             >
               <Image src={letterA} alt="Letter A" width={64} height={64} />
@@ -111,7 +115,11 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, rotate: -8, scale: 0.8 }}
               animate={{ opacity: 1, rotate: -8, scale: 1, y: [0, 6, 0] }}
-              transition={{ opacity: { delay: 0.85, duration: 0.4 }, scale: { delay: 0.85, duration: 0.4 }, y: { delay: 1.4, duration: 3.4, repeat: Infinity, ease: "easeInOut" } }}
+              transition={{
+                opacity: { delay: 0.85, duration: 0.4 },
+                scale: { delay: 0.85, duration: 0.4 },
+                y: { delay: 1.4, duration: 3.4, repeat: Infinity, ease: "easeInOut" },
+              }}
               className="absolute -bottom-6 right-16 z-10 drop-shadow-xl"
             >
               <Image src={letterB} alt="Letter B" width={60} height={60} />
@@ -119,7 +127,11 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, rotate: 16, scale: 0.8 }}
               animate={{ opacity: 1, rotate: 16, scale: 1, y: [0, -5, 0] }}
-              transition={{ opacity: { delay: 1.0, duration: 0.4 }, scale: { delay: 1.0, duration: 0.4 }, y: { delay: 1.6, duration: 2.8, repeat: Infinity, ease: "easeInOut" } }}
+              transition={{
+                opacity: { delay: 1.0, duration: 0.4 },
+                scale: { delay: 1.0, duration: 0.4 },
+                y: { delay: 1.6, duration: 2.8, repeat: Infinity, ease: "easeInOut" },
+              }}
               className="absolute top-8 -left-6 z-10 drop-shadow-xl"
             >
               <Image src={letterC} alt="Letter C" width={56} height={56} />
@@ -139,11 +151,12 @@ export default function Hero() {
                 className="absolute bottom-4 left-4 rounded-xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm dark:bg-card/95"
               >
                 <p className="text-xs font-medium text-muted-foreground">Aansluitend op</p>
-                <p className="text-sm font-bold text-primary-600 dark:text-primary-400">Bouw! methode</p>
+                <p className="text-sm font-bold text-primary-600 dark:text-primary-400">
+                  Bouw! methode
+                </p>
               </motion.div>
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>

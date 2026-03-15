@@ -3,25 +3,24 @@ import Link from "next/link";
 import Logo from "./logo";
 
 const navLinks = [
-  { label: "Home",         href: "/" },
+  { label: "Home", href: "/" },
   { label: "Lesmateriaal", href: "/lesmateriaal" },
-  { label: "Blog",         href: "/blog" },
-  { label: "Contact",      href: "/contact" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-background">
       <div className="mx-auto max-w-screen-xl px-4 md:px-8">
-
         {/* Hoofdrij */}
         <div className="grid grid-cols-2 gap-8 py-12 md:grid-cols-3 lg:py-14">
-
           {/* Merk */}
           <div className="flex flex-col gap-4">
             <Logo width={160} height={96} />
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Spelenderwijs nieuwe letters leren met tastbare, magnetische letterboxen voor kinderen.
+              Spelenderwijs nieuwe letters leren met tastbare, magnetische letterboxen voor
+              kinderen.
             </p>
             <div className="flex gap-2">
               <a

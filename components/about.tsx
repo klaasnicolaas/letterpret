@@ -30,7 +30,6 @@ export default function About() {
     <section className="bg-background py-14 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-screen-xl px-4 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
-
           {/* Tekst */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -48,10 +47,15 @@ export default function About() {
               </span>
             </h2>
             <p className="mb-5 text-lg leading-relaxed text-muted-foreground">
-              Achter Letterpret zit Marlene de Haan, onderwijsassistent op een basisschool. Ze vroeg zich af of kinderen letters en woorden beter zouden begrijpen als ze die ook echt konden vasthouden.
+              Achter Letterpret zit Marlene de Haan, onderwijsassistent op een basisschool. Ze vroeg
+              zich af of kinderen letters en woorden beter zouden begrijpen als ze die ook echt
+              konden vasthouden.
             </p>
             <p className="text-base leading-relaxed text-muted-foreground">
-              Samen met haar partner werden de eerste letterboxen ontworpen en 3D geprint. Kinderen bleken meteen enthousiaster, en ze begrepen sneller hoe losse letters samen een woord vormen. Letterpret is wat het altijd wilde zijn: een praktisch hulpmiddel, gemaakt door mensen uit de praktijk.
+              Samen met haar partner werden de eerste letterboxen ontworpen en 3D geprint. Kinderen
+              bleken meteen enthousiaster, en ze begrepen sneller hoe losse letters samen een woord
+              vormen. Letterpret is wat het altijd wilde zijn: een praktisch hulpmiddel, gemaakt
+              door mensen uit de praktijk.
             </p>
           </motion.div>
 
@@ -80,7 +84,9 @@ export default function About() {
                       </div>
                       <div>
                         <h3 className="mb-1 font-semibold text-foreground">{v.title}</h3>
-                        <p className="text-sm leading-relaxed text-muted-foreground">{v.description}</p>
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                          {v.description}
+                        </p>
                       </div>
                     </CardContent>
                   </Card>
@@ -88,7 +94,6 @@ export default function About() {
               );
             })}
           </motion.div>
-
         </div>
       </div>
     </section>

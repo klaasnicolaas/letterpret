@@ -8,7 +8,6 @@ export default function NotFound() {
     <Layout>
       <section className="flex flex-1 items-center justify-center py-24 sm:py-32">
         <div className="mx-auto max-w-screen-xl px-4 text-center lg:px-8">
-
           {/* Grote 404 */}
           <div className="relative mb-6 inline-block">
             <span className="select-none text-[8rem] font-extrabold leading-none tracking-tight text-primary-100 dark:text-primary-900/50 sm:text-[10rem]">
@@ -25,7 +24,8 @@ export default function NotFound() {
             Deze pagina bestaat niet
           </h1>
           <p className="mx-auto mb-8 max-w-md text-base text-muted-foreground">
-            De pagina die je zoekt is verplaatst, verwijderd of heeft nooit bestaan. Ga terug naar de homepage.
+            De pagina die je zoekt is verplaatst, verwijderd of heeft nooit bestaan. Ga terug naar
+            de homepage.
           </p>
 
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -42,7 +42,6 @@ export default function NotFound() {
               <Link href="/contact">Contact opnemen</Link>
             </Button>
           </div>
-
         </div>
       </section>
     </Layout>
