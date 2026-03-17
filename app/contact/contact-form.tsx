@@ -227,7 +227,7 @@ export default function ContactForm() {
                       type="submit"
                       size="lg"
                       disabled={submitting}
-                      className="w-full rounded-full bg-gradient-to-br from-primary-400 to-primary-600 font-semibold text-white shadow-md shadow-primary-500/25 transition-all hover:from-primary-500 hover:to-primary-700 disabled:opacity-70 sm:w-auto"
+                      className="w-full rounded-full bg-linear-to-br from-primary-400 to-primary-600 font-semibold text-white shadow-md shadow-primary-500/25 transition-all hover:from-primary-500 hover:to-primary-700 disabled:opacity-70 sm:w-auto"
                     >
                       {submitting ? (
                         "Verzenden..."
