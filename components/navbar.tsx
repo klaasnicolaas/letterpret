@@ -96,23 +96,25 @@ export default function NavBar() {
 
             {/* Mobile hamburger */}
             <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
-              <SheetTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="rounded-full text-muted-foreground md:hidden"
-                  aria-label="Menu openen"
-                >
-                  <Menu size={20} />
-                </Button>
+              <SheetTrigger
+                render={
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="rounded-full text-muted-foreground md:hidden"
+                    aria-label="Menu openen"
+                  />
+                }
+              >
+                <Menu size={20} />
               </SheetTrigger>
 
               <SheetContent side="left" className="w-72 p-0">
                 <SheetHeader className="border-b border-border px-6 py-4">
-                  <SheetTitle asChild>
-                    <Link href="/" className="block" onClick={() => setSheetOpen(false)}>
-                      <Logo width={135} height={81} />
-                    </Link>
+                  <SheetTitle
+                    render={<Link href="/" className="block" onClick={() => setSheetOpen(false)} />}
+                  >
+                    <Logo width={135} height={81} />
                   </SheetTitle>
                 </SheetHeader>
 

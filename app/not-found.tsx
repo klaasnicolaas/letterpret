@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <Layout>
       <section className="flex flex-1 items-center justify-center py-24 sm:py-32">
-        <div className="mx-auto max-w-screen-xl px-4 text-center lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 text-center lg:px-8">
           {/* Grote 404 */}
           <div className="relative mb-6 inline-block">
             <span className="select-none text-[8rem] font-extrabold leading-none tracking-tight text-primary-100 dark:text-primary-900/50 sm:text-[10rem]">
@@ -30,16 +30,20 @@ export default function NotFound() {
 
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button
-              className="rounded-full bg-gradient-to-br from-primary-400 to-primary-600 px-6 font-semibold text-white shadow-md shadow-primary-500/25 hover:from-primary-500 hover:to-primary-700"
-              asChild
+              className="rounded-full bg-linear-to-br from-primary-400 to-primary-600 px-6 font-semibold text-white shadow-md shadow-primary-500/25 hover:from-primary-500 hover:to-primary-700"
+              nativeButton={false}
+              render={<Link href="/" />}
             >
-              <Link href="/">
-                <ArrowLeft size={16} />
-                Terug naar home
-              </Link>
+              <ArrowLeft size={16} />
+              Terug naar home
             </Button>
-            <Button variant="outline" className="rounded-full px-6" asChild>
-              <Link href="/contact">Contact opnemen</Link>
+            <Button
+              variant="outline"
+              className="rounded-full px-6"
+              nativeButton={false}
+              render={<Link href="/contact" />}
+            >
+              Contact opnemen
             </Button>
           </div>
         </div>

@@ -208,7 +208,7 @@ function ProductCard({ product }: { product: ProductSet }) {
                 {group.single.map((l) => (
                   <span
                     key={l}
-                    className={`inline-flex h-7 min-w-[1.75rem] items-center justify-center rounded-md border px-1.5 text-sm font-bold ${group.chip}`}
+                    className={`inline-flex h-7 min-w-7 items-center justify-center rounded-md border px-1.5 text-sm font-bold ${group.chip}`}
                   >
                     {l}
                   </span>
@@ -216,7 +216,7 @@ function ProductCard({ product }: { product: ProductSet }) {
                 {group.double.map((l) => (
                   <span
                     key={`${l}-double`}
-                    className={`relative inline-flex h-7 min-w-[1.75rem] items-center justify-center rounded-md border px-1.5 text-sm font-bold ${group.chip}`}
+                    className={`relative inline-flex h-7 min-w-7 items-center justify-center rounded-md border px-1.5 text-sm font-bold ${group.chip}`}
                   >
                     {l}
                     <span className="absolute -right-1.5 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-foreground text-[9px] font-black text-background leading-none">
@@ -249,12 +249,11 @@ function ProductCard({ product }: { product: ProductSet }) {
 
       <CardFooter className="mt-auto pt-2 pb-6">
         <Button
-          className="w-full rounded-full bg-gradient-to-br from-primary-400 to-primary-600 font-semibold text-white shadow-sm hover:from-primary-500 hover:to-primary-700"
-          asChild
+          className="w-full rounded-full bg-linear-to-br from-primary-400 to-primary-600 font-semibold text-white shadow-sm hover:from-primary-500 hover:to-primary-700"
+          nativeButton={false}
+          render={<Link href="/contact" />}
         >
-          <Link href="/contact">
-            Bestellen <ArrowRight size={15} />
-          </Link>
+          Bestellen <ArrowRight size={15} />
         </Button>
       </CardFooter>
     </Card>
@@ -274,7 +273,7 @@ export default function LesmateriaalContent() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mx-auto max-w-screen-xl px-4 text-center lg:px-8"
+          className="mx-auto max-w-7xl px-4 text-center lg:px-8"
         >
           <Badge
             variant="secondary"
@@ -285,7 +284,7 @@ export default function LesmateriaalContent() {
           </Badge>
           <h1 className="mb-4 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             Magnetische{" "}
-            <span className="bg-gradient-to-r from-primary-500 to-primary-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary-500 to-primary-400 bg-clip-text text-transparent">
               letterboxen
             </span>{" "}
             per blok
@@ -318,7 +317,7 @@ export default function LesmateriaalContent() {
 
       {/* ── Producten ── */}
       <section className="py-12 sm:py-16 lg:py-20">
-        <div className="mx-auto max-w-screen-xl px-4 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
@@ -382,7 +381,7 @@ export default function LesmateriaalContent() {
 
       {/* ── Hoe werkt het ── */}
       <section className="bg-section-warm py-12 sm:py-16 lg:py-20">
-        <div className="mx-auto max-w-screen-xl px-4 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -405,7 +404,7 @@ export default function LesmateriaalContent() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mx-auto max-w-2xl"
           >
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion className="w-full">
               {faqItems.map((item, i) => (
                 <AccordionItem key={i} value={`item-${i}`}>
                   <AccordionTrigger className="text-left font-semibold">
@@ -423,13 +422,13 @@ export default function LesmateriaalContent() {
 
       {/* ── CTA ── */}
       <section className="py-12 sm:py-16 lg:py-20">
-        <div className="mx-auto max-w-screen-xl px-4 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary-400 via-primary-500 to-primary-700 px-8 py-14 text-center shadow-2xl shadow-primary-500/30 sm:px-16"
+            className="relative overflow-hidden rounded-3xl bg-linear-to-br from-primary-400 via-primary-500 to-primary-700 px-8 py-14 text-center shadow-2xl shadow-primary-500/30 sm:px-16"
           >
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
               <div className="absolute -right-32 -top-32 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
@@ -446,11 +445,10 @@ export default function LesmateriaalContent() {
               <Button
                 size="lg"
                 className="rounded-full bg-white px-8 font-bold text-primary-600 shadow-lg shadow-black/15 transition-colors hover:bg-primary-50"
-                asChild
+                nativeButton={false}
+                render={<Link href="/contact" />}
               >
-                <Link href="/contact">
-                  Neem contact op <ArrowRight size={16} />
-                </Link>
+                Neem contact op <ArrowRight size={16} />
               </Button>
             </div>
           </motion.div>

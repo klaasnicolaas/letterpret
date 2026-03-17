@@ -8,13 +8,13 @@ import { Button } from "@/components/ui/button";
 export default function CtaBanner() {
   return (
     <section className="bg-section-warm py-14 sm:py-20 lg:py-28">
-      <div className="mx-auto max-w-screen-xl px-4 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary-400 via-primary-500 to-primary-700 px-8 py-16 text-center shadow-2xl shadow-primary-500/30 sm:px-16"
+          className="relative overflow-hidden rounded-3xl bg-linear-to-br from-primary-400 via-primary-500 to-primary-700 px-8 py-16 text-center shadow-2xl shadow-primary-500/30 sm:px-16"
         >
           {/* Decoratie */}
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -47,19 +47,19 @@ export default function CtaBanner() {
               <Button
                 size="lg"
                 className="rounded-full bg-white px-8 font-bold text-primary-600 shadow-lg shadow-black/15 transition-colors hover:bg-primary-50"
-                asChild
+                nativeButton={false}
+                render={<Link href="/contact" />}
               >
-                <Link href="/contact">
-                  Bestel nu <ArrowRight size={16} />
-                </Link>
+                Bestel nu <ArrowRight size={16} />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="rounded-full border-white/40 bg-transparent px-8 font-semibold text-white hover:bg-white/15 hover:text-white"
-                asChild
+                nativeButton={false}
+                render={<Link href="/lesmateriaal" />}
               >
-                <Link href="/lesmateriaal">Bekijk lesmateriaal</Link>
+                Bekijk lesmateriaal
               </Button>
             </div>
           </div>
