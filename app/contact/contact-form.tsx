@@ -58,7 +58,7 @@ export default function ContactForm() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mx-auto max-w-screen-xl px-4 text-center lg:px-8"
+          className="mx-auto max-w-7xl px-4 text-center lg:px-8"
         >
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary-500">
             Neem contact op
@@ -118,7 +118,7 @@ export default function ContactForm() {
                           type="button"
                           onClick={() => setType(t.value)}
                           className={cn(
-                            "rounded-full border px-4 py-1.5 text-sm font-medium transition-colors",
+                            "cursor-pointer rounded-full border px-4 py-1.5 text-sm font-medium transition-colors",
                             type === t.value
                               ? "border-primary-500 bg-primary-500 text-white"
                               : "border-border bg-background text-muted-foreground hover:border-primary-300 hover:text-foreground",

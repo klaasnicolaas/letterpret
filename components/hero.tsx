@@ -22,11 +22,11 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-background">
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-40 right-0 h-[640px] w-[640px] translate-x-1/3 rounded-full bg-primary-100/60 blur-3xl dark:bg-primary-900/20" />
-        <div className="absolute -bottom-32 left-0 h-[480px] w-[480px] -translate-x-1/3 rounded-full bg-primary-50 blur-3xl dark:bg-primary-900/10" />
+        <div className="absolute -top-40 right-0 h-160 w-160 translate-x-1/3 rounded-full bg-primary-100/60 blur-3xl dark:bg-primary-900/20" />
+        <div className="absolute -bottom-32 left-0 h-120 w-120 -translate-x-1/3 rounded-full bg-primary-50 blur-3xl dark:bg-primary-900/10" />
       </div>
 
-      <div className="mx-auto max-w-screen-xl px-4 py-12 sm:py-16 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:py-16 lg:px-8 lg:py-24">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
           {/* Tekst */}
           <motion.div
@@ -45,7 +45,7 @@ export default function Hero() {
 
             <h1 className="mb-5 text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
               Spelenderwijs{" "}
-              <span className="bg-gradient-to-r from-primary-500 to-primary-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-primary-500 to-primary-400 bg-clip-text text-transparent">
                 letters en woorden
               </span>{" "}
               leren lezen
@@ -59,20 +59,20 @@ export default function Hero() {
             <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
               <Button
                 size="lg"
-                className="rounded-full bg-gradient-to-br from-primary-400 to-primary-600 px-8 font-semibold text-white shadow-md shadow-primary-500/30 transition-all hover:from-primary-500 hover:to-primary-700 hover:shadow-lg hover:shadow-primary-500/35"
-                asChild
+                className="rounded-full bg-linear-to-br from-primary-400 to-primary-600 px-8 font-semibold text-white shadow-md shadow-primary-500/30 transition-all hover:from-primary-500 hover:to-primary-700 hover:shadow-lg hover:shadow-primary-500/35"
+                nativeButton={false}
+                render={<Link href="/contact" />}
               >
-                <Link href="/contact">
-                  Bestel nu <ArrowRight size={16} />
-                </Link>
+                Bestel nu <ArrowRight size={16} />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="rounded-full border-primary-200 px-8 font-semibold text-primary-600 hover:border-primary-300 hover:bg-primary-50 dark:border-primary-800 dark:text-primary-400 dark:hover:bg-primary-950/40"
-                asChild
+                nativeButton={false}
+                render={<Link href="/lesmateriaal" />}
               >
-                <Link href="/lesmateriaal">Meer info</Link>
+                Meer info
               </Button>
             </div>
 

@@ -69,13 +69,13 @@
       height: 0;
     }
     to {
-      height: var(--radix-accordion-content-height);
+      height: var(--accordion-panel-height);
     }
   }
 
   @keyframes accordion-up {
     from {
-      height: var(--radix-accordion-content-height);
+      height: var(--accordion-panel-height);
     }
     to {
       height: 0;
@@ -149,10 +149,6 @@
 html {
   scroll-behavior: smooth;
   overflow-x: clip;
-}
-
-body[data-scroll-locked] {
-  --removed-body-scroll-bar-size: 0px !important;
 }
 
 @layer utilities {
